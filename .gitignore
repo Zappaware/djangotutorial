@@ -9,6 +9,7 @@
 
 # Ignore all __pycache__ folders
 __pycache__/
+*.pyc
 
 # Ignore virtual environment folder
 venv/
