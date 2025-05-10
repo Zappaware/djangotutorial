@@ -1,5 +1,51 @@
 {
-	"venvPath": ".",
-	"venv": "env",
-	"reportAttributeAccessIssue": "none"
+	"include": ["mysite"],
+
+	"exclude": [
+		"**/node_modules",
+		"**/__pycache__",
+		"mysite/experimental",
+		"mysite/typestubs"
+	],
+
+	"ignore": ["mysite/oldstuff"],
+
+	"defineConstant": {
+		"DEBUG": true
+	},
+
+	"reportMissingImports": false,
+	"reportMissingTypeStubs": false,
+	"reportUnknownParameterType": "none",
+	"reportMissingParameterType": "none",
+	"reportUnknownVariableType": "none",
+	"reportUnknownMemberType": "none",
+	"reportUnusedImport": "none",
+	"reportUnusedParameter": "none",
+
+	"pythonVersion": "3.6",
+	"pythonPlatform": "Linux",
+
+	"executionEnvironments": [
+		{
+			"root": "mysite/web",
+			"pythonVersion": "3.5",
+			"pythonPlatform": "Windows",
+			"extraPaths": ["mysite/service_libs"],
+			"reportMissingImports": "warning"
+		},
+		{
+			"root": "mysite/sdk",
+			"pythonVersion": "3.0",
+			"extraPaths": ["mysite/backend"]
+		},
+		{
+			"root": "mysite/tests",
+			"reportPrivateUsage": false,
+			"extraPaths": ["mysite/tests/e2e", "mysite/sdk"]
+		},
+		{
+			"root": "mysite"
+		}
+	]
 }
